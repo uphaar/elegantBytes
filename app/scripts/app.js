@@ -13,7 +13,7 @@ angular.module('elegantBytesApp', ['ui.router','ngResource'])
                     },
                     'content': {
                         templateUrl : 'views/main.html',
-                        controller  : 'IndexController'
+                        //controller  : 'MainCtrl'
                     },
                     'footer': {
                         templateUrl : 'views/footer.html',

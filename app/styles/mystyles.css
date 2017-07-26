@@ -4,33 +4,64 @@
 }
 .row-content {
   margin: 0px auto;
-  padding: 50px 0px;
+  padding: 0px 0px;
   border-bottom: 1px ridge;
   min-height: 400px;
 }
 .row-footer {
   margin: 0px auto;
-  padding: 20px 0px;
+  padding: 0px 0px;
   background-color: #AfAfAf;
 }
-.jumbotron {
-  margin: 0px auto;
-  padding: 70px 30px;
-  background: #7986CB;
-  color: floralwhite;
-}
-.carousel {
-  background: #1a237e;
-}
-.carousel .item {
-  height: 300px;
-}
-.carousel .item img {
-  left: 0;
-  min-height: 300px;
-  position: absolute;
-  top: 0;
-}
+ /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 0px;
+      margin-top: 200px;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
 .navbar-inverse {
   background: #000000;
   color: #ffffff;
@@ -77,7 +108,7 @@ address {
 }
 body {
   align: center;
-  padding: 50px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
   z-index: 0;
 }
 .tab-content {
@@ -89,8 +120,4 @@ body {
 .affix {
   top: 100px;
 }
-#carouselButtons {
-  bottom: 0px;
-  position: absolute;
-  right: 0px;
-}
+
