@@ -1,0 +1,144 @@
+<div class="container">
+    <div class="row row-content">
+        <div class="col-xs-12">
+            <p class="h1"><strong>Request a Quote!</strong></p>
+            <p class="h2">Please provide us with the necessary contact information and select the required services so we can deliver an accurate proposal in a timely manner.</p>
+
+        </div>
+
+
+    </div>
+    <div class="row row-content" ng-controller="QuoteController">
+        <div class="col-xs-6">
+            <form class="form-horizontal" role="form" name="quoteForm1" ng-submit="sendQuote()" novalidate>
+                <div id="parentnamediv" class="form-group" ng-class="{'has-error':quoteForm1.name.$error.required && !quoteForm1.name.$pristine}">
+                    <div id="formdiv" class="row row-content">
+                        <label for="name" class="col-xs-6 h3" >Name</label>
+                    </div>
+                    <div id="formdiv" class="row row-content">
+                    <div id="namediv" class="col-xs-12">
+                        <input type="text" class="form-control custominputs" id="name" name="name" ng-model="quote.name" required>
+                        <span ng-show="quoteForm1.name.$error.required && !quoteForm1.name.$pristine" class="help-block">Your name is required</span>
+                    </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group" ng-class="{'has-error':quoteForm1.email.$error.required && !quoteForm1.email.$pristine}">
+                    <div id="formdiv" class="row row-content">
+                        <label for="email" class="col-xs-6 h3" >Email</label>
+                    </div>
+                    <div id="formdiv" class="row row-content">
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control custominputs" id="email" name="email" ng-model="quote.email" required>
+                        <span ng-show="quoteForm1.email.$error.required && !quoteForm1.email.$pristine" class="help-block">Your email is required</span>
+                    </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div id="formdiv" class="row row-content">
+                        <label for="services" class="col-xs-6 h3" >Services Interested In:</label>
+                    </div>
+                    <div id="formdiv" class="row row-content">
+                    <div class="checkbox col-xs-12">
+                            <label class="checkbox-inline h4 text-muted">
+                                <input type="checkbox" name="design" value="" ng-model="quote.webdev" >
+                                Web Design/Development
+                            </label>
+
+                        </div>
+                        <div class="checkbox col-xs-12">
+
+                            <label class="checkbox-inline h4 text-muted">
+                                <input type="checkbox" name="programming" value="" ng-model="quote.prog" >
+                                Programming
+                            </label>
+                        </div>
+                        <div class="checkbox col-xs-12">
+
+                            <label class="checkbox-inline h4 text-muted">
+                                <input type="checkbox" name="mobile" value="" ng-model="quote.mobile" >
+                                Mobile App Development
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                        <div class="col-xs-6">
+                            <button id="submit" type="submit" class="btn btn-block submitbutton" ng-disabled="quoteForm1.$invalid || quoteForm2.$invalid">Send Request</button>
+                        </div>
+                </div>
+            </form>
+
+
+
+        </div>
+        <div class="col-xs-4">
+            <form class="form-horizontal" role="form" name="quoteForm2" >
+                <div class="form-group">
+                    <div id="formdiv" class="row row-content">
+                        <label for="company" class="col-xs-6 h3" >Company</label>
+                    </div>
+                    <div id="formdiv" class="row row-content">
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control custominputs" id="company" name="company" ng-model="quote.company">
+
+                    </div>
+                    </div>
+
+                </div>
+                <div class="form-group" ng-class="{'has-error':quoteForm2.phone.$error.required && !quoteForm2.phone.$pristine}">
+                    <div id="formdiv" class="row row-content">
+                        <label for="phone" class="col-xs-6 h3" >Phone</label>
+                    </div>
+                    <div id="formdiv" class="row row-content">
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control custominputs" id="phone" name="phone" ng-model="quote.phone" required>
+                        <span ng-show="quoteForm2.phone.$error.required && !quoteForm2.phone.$pristine" class="help-block">Your phone is required</span>
+                    </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div id="formdiv" class="row row-content">
+                        <label for="message" class="col-xs-12 h3" >Feel free to provide us with any further information or inquiries you may have.</label>
+                    </div>
+                    <div id="formdiv" class="row row-content">
+                    <div class="col-xs-12">
+                        <textarea class="form-control" id="feedback" name="feedback" rows="6" ng-model="quote.comments"></textarea>
+
+                    </div>
+                    </div>
+
+                </div>
+
+
+
+            </form>
+
+
+
+        </div>
+        <div class="col-xs-2 ">
+              <h3>Your Current Feedback:</h3>
+              <p id="actualname">{{quote.name}} </p>
+              <p>{{quote.email}} </p>
+              <p>{{quote.webdev}} </p>
+            <p>{{quote.prog}} </p>
+            <p>{{quote.mobile}} </p>
+            <p>{{quote.phone}} </p>
+            <p>{{quote.company}} </p>
+            <p>{{quote.comments}} </p>
+            </div>
+
+
+
+    </div>
+
+
+
+
+</div>
